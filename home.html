@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rails Abam - Personal Blog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(90deg, #4b6cb7, #182848);
+            color: #fff;
+            padding: 20px 20px 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-in-out;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        .contact-info {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+            color: #ffdd57;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            color: #4b6cb7;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+        .profile-pic {
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+            border-radius: 50%;
+            border: 5px solid #4b6cb7;
+            animation: rotateIn 1.5s ease-in-out;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #4b6cb7;
+            border-bottom: 2px solid #4b6cb7;
+            display: inline-block;
+            padding-bottom: 5px;
+            animation: slideInLeft 1.2s ease-in-out;
+        }
+        section p, section ul {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        section ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        section ul li a {
+            color: #182848;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+        }
+        section ul li a:hover {
+            text-decoration: underline;
+            color: #4b6cb7;
+            transform: translateX(5px);
+        }
+        .contact-form {
+            margin-top: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease-in-out;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #4b6cb7;
+        }
+        .contact-form button {
+            background-color: #4b6cb7;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #182848;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes rotateIn {
+            from { transform: rotate(-200deg); opacity: 0; }
+            to { transform: rotate(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rails Abam</h1>
+        <p>IAM Security Engineer | Google Cloud Engineer | Front-End Developer</p>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:railsdevabam@gmail.com">railsdevabam@gmail.com</a> | Phone: 08157510843 | Location: Lagos, Nigeria</p>
+        </div>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="content">
+        <img src="photo.jpeg" alt="Rails Abam" class="profile-pic">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi, I'm Rails Abam, an experienced IAM Security Engineer with a background in Google Cloud Engineering and Front-End Development. I specialize in deploying IAM solutions, cloud identity migration, and optimizing RBAC systems. I'm passionate about improving security compliance and efficiency.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="http://docs.google.com/document/d/1Z61T8dczNM5rqQnn-TWItCi3gaLxfe_Yl5axE8QxJwU/edit?usp=sharing" target="_blank">Microsoft Entra ID & Azure Integration</a></li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form class="contact-form" id="contactForm">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for reaching out! I will get back to you soon.');
+        });
+    </script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDm5AntWBdLg7xs7Lfh29VZlZlg_eNsACs",
+          authDomain: "chat-me-401f1.firebaseapp.com",
+          projectId: "chat-me-401f1",
+          storageBucket: "chat-me-401f1.firebasestorage.app",
+          messagingSenderId: "1055499329283",
+          appId: "1:1055499329283:web:57869c77b8110a45d61336",
+          measurementId: "G-1G6F6WYD19"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+</html>
